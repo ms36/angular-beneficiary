@@ -1,0 +1,13 @@
+button {
+  font-size: 2rem;
+}
+
+btn-add {
+  background-color: green;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100px;
+}
