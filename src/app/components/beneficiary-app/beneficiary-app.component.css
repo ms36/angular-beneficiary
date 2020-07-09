@@ -16,6 +16,7 @@ a:link:active, a:visited:active, a:link, a:visited {
 }
 
 .btn-add {
+  margin: 20px;
   background-color: green;
-  grid-area: bottom-right;
+  font-size: 2rem;
 }

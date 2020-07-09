@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Beneficiary } from './../../../models/beneficiary';
+import { User } from './../../../models/user';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-beneficiary',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./beneficiary.component.css']
 })
 export class BeneficiaryComponent implements OnInit {
+   @Input() beneficiary: Beneficiary;
 
   constructor() { }
 

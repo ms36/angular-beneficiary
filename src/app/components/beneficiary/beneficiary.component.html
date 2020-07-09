@@ -1,11 +1,11 @@
 <div class="container">
 
-    <span class="name">Bob Ross</span>
+    <span class="name">{{beneficiary?.firstName}} {{beneficiary?.lastName}}</span>
     <div class="percentage">
       <mat-form-field class="example-full-width">
         <mat-label>Percentage</mat-label>
-        <input matInput #percentage maxlength="3" placeholder="Ex. 50" value="100">
-        <mat-hint align="end">{{percentage.value}} / 100</mat-hint>
+        <input matInput #percentage maxlength="3" placeholder="Ex. 50" value="{{beneficiary?.percentOfBenefit}}">
+        <mat-hint align="end">{{beneficiary?.percentOfBenefit}} / 100</mat-hint>
       </mat-form-field>
     </div>
 

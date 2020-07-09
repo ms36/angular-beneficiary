@@ -7,10 +7,6 @@
                        "bottom-left bottom-center bottom-right";
 }
 
-button {
-  font-size: 2rem;
-}
-
 .name {
   grid-area: top-left;
   font-size: 1.3rem;
@@ -20,6 +16,7 @@ button {
   grid-area: top-center;
 }
 .btn-subtract {
+  font-size: 2rem;
   background-color: red;
   grid-area: top-right;
 }
