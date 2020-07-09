@@ -6,20 +6,23 @@
       <mat-icon>info</mat-icon>
     </a>
   </p>
-  <div *ngFor="let beneficiary of this.user.beneficiaries">
-    <app-beneficiary [beneficiary]="beneficiary"></app-beneficiary>
+  <div *ngFor="let beneficiary of this.user.primaryBeneficiaries; let i = index">
+    <app-beneficiary [beneficiary]="beneficiary" (deleteBeneficiary)="deleteBeneficiary($event)"></app-beneficiary>
     <mat-divider class="divider"></mat-divider>
   </div>
   <button mat-mini-fab color="primary" class="btn-add">+</button>
 
-  <div *ngIf="this.user.beneficiaries">
+  <div *ngIf="this.user.primaryBeneficiaries">
     <p>
       <strong class="title">Contingent Benificiary</strong>
       <a href="https://benefits.va.gov/INSURANCE/resources_handbook_ins_chapter6.asp" target="_blank">
         <mat-icon>info</mat-icon>
       </a>
     </p>
-    <app-beneficiary></app-beneficiary>
+    <div *ngFor="let beneficiary of this.user.contingentBeneficiaries">
+      <app-beneficiary></app-beneficiary>
+      <mat-divider class="divider"></mat-divider>
+    </div>
     <button mat-mini-fab color="primary" class="btn-add">+</button>
   </div>
 </div>

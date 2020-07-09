@@ -4,5 +4,6 @@ export class User {
   email: string;
   firstName: string;
   lastName: string;
-  beneficiaries: Beneficiary[];
+  primaryBeneficiaries: Beneficiary[];
+  contingentBeneficiaries: Beneficiary[];
 }

@@ -10,7 +10,6 @@ import { Component, OnInit } from '@angular/core';
 export class BeneficiaryAppComponent implements OnInit {
   user: User;
 
-  numberOfBeneficiary: 2;
   constructor() { }
 
   ngOnInit() {
@@ -19,7 +18,7 @@ export class BeneficiaryAppComponent implements OnInit {
     email: 'email@example.com',
     firstName: 'Bob',
     lastName: 'Ross',
-    beneficiaries: [
+    primaryBeneficiaries: [
       {
       id: 1,
       firstName: 'Bruce',
@@ -32,8 +31,15 @@ export class BeneficiaryAppComponent implements OnInit {
       lastName: 'Wayne',
       percentOfBenefit: 50
     }
-  ]
+  ],
+    contingentBeneficiaries: []
   };
+  }
+
+  deleteBeneficiary(beneficiary: Beneficiary) {
+    console.log('app-beneficiary-app: delete');
+    this.user.primaryBeneficiaries = this.user.primaryBeneficiaries.filter(b => b.id !== beneficiary.id);
+    // this.beneficiaryService.deleteTodo(beneficiary).subscribe();
   }
 
 }
