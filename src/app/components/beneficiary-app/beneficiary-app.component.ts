@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BeneficiaryAppComponent implements OnInit {
   user: User;
+  showBeneficiaryDetailForm = false;
 
   constructor() { }
 
@@ -35,22 +36,18 @@ export class BeneficiaryAppComponent implements OnInit {
       contingentBeneficiaries: []
     };
   }
+  toggleshowBeneficiaryDetailForm() {
+    this.showBeneficiaryDetailForm = !this.showBeneficiaryDetailForm;
+  }
 
   deleteBeneficiary(beneficiary: Beneficiary) {
-    console.log('app-beneficiary-app: delete');
     this.user.primaryBeneficiaries = this.user.primaryBeneficiaries.filter(b => b.id !== beneficiary.id);
     // this.beneficiaryService.deleteTodo(beneficiary).subscribe();
   }
 
-  addBeneficiary() {
-    const newBeneficiary = {
-      id: 3,
-      firstName: 'Lil',
-      lastName: 'Wayne',
-      percentOfBenefit: 50
-    };
-
-    this.user.primaryBeneficiaries.push(newBeneficiary);
+  addBeneficiary(beneficiary: Beneficiary) {
+    this.showBeneficiaryDetailForm = false;
+    this.user.primaryBeneficiaries.push(beneficiary);
   }
 
 }

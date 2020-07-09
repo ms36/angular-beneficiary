@@ -1,1 +1,29 @@
-<p>beneficiary-details works!</p>
+<form [formGroup]="myForm">
+  <!-- First Name -->
+  <mat-form-field class="example-full-width">
+    <mat-label>First Name</mat-label>
+    <input matInput placeholder="First Name" required formControlName="firstName">
+    <mat-error *ngIf="formControl.hasError('required')">
+      First Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <!-- Last Name -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Last Name</mat-label>
+    <input matInput placeholder="Last Name" required formControlName="lastName">
+    <mat-error *ngIf="formControl.hasError('required')">
+      Last Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <!-- Percentage of Benefit -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Percentage of Benefit</mat-label>
+    <input matInput placeholder="Last Name" required formControlName="percentOfBenefit">
+    <mat-error *ngIf="formControl.hasError('required')">
+      A Percentage is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <button type="button" mat-raised-button color="primary" (click)="addBeneficiary()">Save</button>
+  <button mat-raised-button color="warn">Cancel</button>
+</form>

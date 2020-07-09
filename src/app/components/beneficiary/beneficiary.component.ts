@@ -17,7 +17,6 @@ export class BeneficiaryComponent implements OnInit {
   }
 
   onDelete(beneficiary: Beneficiary) {
-    console.log('app-beneficiary: delete');
     this.deleteBeneficiary.emit(beneficiary);
   }
 

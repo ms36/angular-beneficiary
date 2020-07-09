@@ -10,7 +10,16 @@
     <app-beneficiary [beneficiary]="beneficiary" (deleteBeneficiary)="deleteBeneficiary($event)"></app-beneficiary>
     <mat-divider class="divider"></mat-divider>
   </div>
-  <button mat-mini-fab class="btn-add" (click)="addBeneficiary()">+</button>
+  <button
+    *ngIf="!this.showBeneficiaryDetailForm"
+    mat-mini-fab class="btn-add"
+    (click)="toggleshowBeneficiaryDetailForm()"
+    cdkOverlayOrigin #originOverlay="cdkOverlayOrigin">+
+  </button>
+  <app-beneficiary-details
+    *ngIf="this.showBeneficiaryDetailForm"
+    (addNewBeneficiary)="addBeneficiary($event)">
+  </app-beneficiary-details>
 
   <div *ngIf="this.user.primaryBeneficiaries">
     <p>
@@ -26,3 +35,12 @@
     <button mat-mini-fab color="primary" class="btn-add">+</button>
   </div>
 </div>
+
+<!-- Add beneficiary details overlay-->
+<!-- <ng-template
+  cdkConnectedOverlay
+  cdkConnectedOverlayHasBackdrop
+  [cdkConnectedOverlayOrigin]="originOverlay"
+  [cdkConnectedOverlayOpen]="this.showBeneficiaryDetailForm">
+  <app-beneficiary-details></app-beneficiary-details>
+</ng-template> -->

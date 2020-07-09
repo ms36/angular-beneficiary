@@ -5,6 +5,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
-    MatDividerModule
+    MatDividerModule,
+    ReactiveFormsModule
   ],
   exports: [
     MatInputModule,
@@ -21,7 +23,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
-    MatDividerModule
+    MatDividerModule,
+    ReactiveFormsModule
   ]
 })
 export class MaterialModule { }
