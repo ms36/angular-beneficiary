@@ -1,30 +1,14 @@
-<form class="example-form">
-  <table class="example-full-width" cellspacing="0">
-    <tr>
-      <td>
-        <mat-form-field class="example-full-width">
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Bob Ross">
-        </mat-form-field>
-      </td>
-      <td>
-        <mat-form-field class="example-full-width">
+<div class="container">
+
+    <span class="name">Bob Ross</span>
+    <div class="percentage">
+      <mat-form-field class="example-full-width">
         <mat-label>Percentage</mat-label>
         <input matInput #percentage maxlength="3" placeholder="Ex. 50" value="100">
         <mat-hint align="end">{{percentage.value}} / 100</mat-hint>
-        </mat-form-field>
-      </td>
-      <td class="example-button-container">
-        <button mat-mini-fab color="warn" class="btn-subtract">-</button>
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td class="example-button-container">
-        <button mat-mini-fab color="primary" class="btn-add">+</button>
-      </td>
-    </tr>
-  </table>
-</form>
+      </mat-form-field>
+    </div>
+
+    <button mat-mini-fab color="warn" class="btn-subtract">-</button>
+</div>
 

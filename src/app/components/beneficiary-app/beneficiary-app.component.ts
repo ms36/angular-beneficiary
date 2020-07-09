@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BeneficiaryAppComponent implements OnInit {
 
+  numberOfBeneficiary: 2;
   constructor() { }
 
   ngOnInit() {

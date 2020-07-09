@@ -1,13 +1,27 @@
+.container {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 60px;
+  grid-template-areas: "top-left top-center top-right"
+                       "bottom-left bottom-center bottom-right";
+}
+
 button {
   font-size: 2rem;
 }
 
-.btn-add {
-  background-color: green;
+.name {
+  grid-area: top-left;
+  font-size: 1.3rem;
 }
 
+.percentage {
+  grid-area: top-center;
+}
 .btn-subtract {
   background-color: red;
+  grid-area: top-right;
 }
 
 .example-button-container {

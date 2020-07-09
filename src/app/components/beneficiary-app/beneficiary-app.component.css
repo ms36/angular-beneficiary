@@ -1,14 +1,21 @@
 .title {
   font-size: 1.5rem;
 }
+
 a:link:active, a:visited:active, a:link, a:visited {
   color: black;
   padding: 10px;
 }
+
 .body {
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 60%;
   padding: 20px;
-  box-shadow: 0px 0px 10px 0px;
+  box-shadow: -10px 0px 40px 0px #112e51, 10px 0px 40px 0px #112e51;
   background-color: white;
+}
+
+.btn-add {
+  background-color: green;
+  grid-area: bottom-right;
 }
