@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { User } from './../../../models/user';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-beneficiary-header',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./beneficiary-header.component.css']
 })
 export class BeneficiaryHeaderComponent implements OnInit {
-
+  @Input() user: User;
   constructor() { }
 
   ngOnInit() {
