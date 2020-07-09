@@ -18,7 +18,8 @@
   </button>
   <app-beneficiary-details
     *ngIf="this.showBeneficiaryDetailForm"
-    (addNewBeneficiary)="addBeneficiary($event)">
+    (addNewBeneficiary)="addBeneficiary($event)"
+    (closeScreen)="closeAddBeneficiary()">
   </app-beneficiary-details>
 
   <div *ngIf="this.user.primaryBeneficiaries">

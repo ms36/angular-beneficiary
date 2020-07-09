@@ -50,4 +50,8 @@ export class BeneficiaryAppComponent implements OnInit {
     this.user.primaryBeneficiaries.push(beneficiary);
   }
 
+  closeAddBeneficiary() {
+    this.showBeneficiaryDetailForm = false;
+  }
+
 }

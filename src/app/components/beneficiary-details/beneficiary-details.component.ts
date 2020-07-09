@@ -13,6 +13,7 @@ export class BeneficiaryDetailsComponent implements OnInit {
   beneficiary = new Beneficiary();
 
   @Output() addNewBeneficiary: EventEmitter<Beneficiary> = new EventEmitter();
+  @Output() closeScreen: EventEmitter<any> = new EventEmitter();
 
   formControl = new FormControl('', [
     Validators.required,
@@ -32,5 +33,9 @@ export class BeneficiaryDetailsComponent implements OnInit {
     this.beneficiary.lastName = this.myForm.value.lastName;
     this.beneficiary.percentOfBenefit = this.myForm.value.percentOfBenefit;
     this.addNewBeneficiary.emit(this.beneficiary);
+  }
+
+  closeAddBeneficiary() {
+    this.closeScreen.emit();
   }
 }
