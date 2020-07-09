@@ -2,8 +2,12 @@ button {
   font-size: 2rem;
 }
 
-btn-add {
+.btn-add {
   background-color: green;
+}
+
+.btn-subtract {
+  background-color: red;
 }
 
 .example-button-container {

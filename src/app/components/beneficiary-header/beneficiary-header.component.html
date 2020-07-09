@@ -1,14 +1,11 @@
-<p>
-  <mat-toolbar color="primary">
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    <span>Benefits</span>
+<div class="container">
+  <mat-toolbar color="primary" class="tool-bar">
+    <a href="https://www.va.gov/">
+      <img alt="Go to VA.gov" src="https://prod-va-gov-assets.s3-us-gov-west-1.amazonaws.com/img/header-logo.png">
+    </a>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
+    <p>Bob Ross</p>
   </mat-toolbar>
-</p>
+  <mat-divider class="divider"></mat-divider>
+  <p class="title">Beneficiaries</p>
+</div>
