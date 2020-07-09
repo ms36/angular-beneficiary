@@ -10,7 +10,7 @@
     <app-beneficiary [beneficiary]="beneficiary" (deleteBeneficiary)="deleteBeneficiary($event)"></app-beneficiary>
     <mat-divider class="divider"></mat-divider>
   </div>
-  <button mat-mini-fab color="primary" class="btn-add">+</button>
+  <button mat-mini-fab class="btn-add" (click)="addBeneficiary()">+</button>
 
   <div *ngIf="this.user.primaryBeneficiaries">
     <p>
