@@ -14,4 +14,11 @@ export class Beneficiary {
   //   country: string
   // };
   percentOfBenefit: number;
+
+  constructor() {
+    this.id = null;
+    this.firstName = '';
+    this.lastName = '';
+    this.percentOfBenefit = 0;
+  }
 }

@@ -9,7 +9,7 @@ import {FormControl, Validators, FormGroup, FormBuilder} from '@angular/forms';
 })
 export class BeneficiaryDetailsComponent implements OnInit {
 
-  myForm: FormGroup;
+  addbeneficiaryForm: FormGroup;
   beneficiary = new Beneficiary();
 
   @Output() addNewBeneficiary: EventEmitter<Beneficiary> = new EventEmitter();
@@ -18,10 +18,11 @@ export class BeneficiaryDetailsComponent implements OnInit {
   formControl = new FormControl('', [
     Validators.required,
   ]);
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.myForm = this.fb.group({
+    this.addbeneficiaryForm = this.fb.group({
       firstName: '',
       lastName: '',
       percentOfBenefit: ''
@@ -29,9 +30,9 @@ export class BeneficiaryDetailsComponent implements OnInit {
   }
 
   addBeneficiary() {
-    this.beneficiary.firstName = this.myForm.value.firstName;
-    this.beneficiary.lastName = this.myForm.value.lastName;
-    this.beneficiary.percentOfBenefit = this.myForm.value.percentOfBenefit;
+    this.beneficiary.firstName = this.addbeneficiaryForm.value.firstName;
+    this.beneficiary.lastName = this.addbeneficiaryForm.value.lastName;
+    this.beneficiary.percentOfBenefit = this.addbeneficiaryForm.value.percentOfBenefit;
     this.addNewBeneficiary.emit(this.beneficiary);
   }
 

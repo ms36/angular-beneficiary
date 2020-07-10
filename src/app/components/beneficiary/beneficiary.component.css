@@ -1,28 +1,16 @@
 .container {
   padding: 30px;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 60px;
-  grid-template-areas: "top-left top-center top-right"
-                       "bottom-left bottom-center bottom-right";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .name {
-  grid-area: top-left;
   font-size: 1.3rem;
 }
 
-.percentage {
-  grid-area: top-center;
-}
 .btn-subtract {
+  margin: 20px;
   font-size: 2rem;
   background-color: red;
-  grid-area: top-right;
-}
-
-.example-button-container {
-  display: flex;
-  justify-content: center;
-  width: 100px;
 }

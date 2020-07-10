@@ -1,10 +1,17 @@
 <div class="container">
 
     <span class="name">{{beneficiary?.firstName}} {{beneficiary?.lastName}}</span>
+
     <div class="percentage">
-      <mat-form-field class="example-full-width">
+      <mat-form-field class="example-full-width"  appearance="fill">
         <mat-label>Percentage</mat-label>
-        <input matInput #percentage maxlength="3" placeholder="Ex. 50" value="{{beneficiary?.percentOfBenefit}}">
+        <input matInput
+          #percentage
+          maxlength="3"
+          placeholder="Ex. 50"
+          value="{{beneficiary?.percentOfBenefit}}"
+          (input)="onChange(beneficiary, percentage)"
+        >
         <mat-hint align="end">{{beneficiary?.percentOfBenefit}} / 100</mat-hint>
       </mat-form-field>
     </div>

@@ -1,4 +1,4 @@
-<form [formGroup]="myForm">
+<form [formGroup]="addbeneficiaryForm">
   <!-- First Name -->
   <mat-form-field class="example-full-width">
     <mat-label>First Name</mat-label>
@@ -7,6 +7,7 @@
       First Name is <strong>required</strong>
     </mat-error>
   </mat-form-field>
+
   <!-- Last Name -->
   <mat-form-field class="example-full-width">
     <mat-label>Last Name</mat-label>
@@ -15,10 +16,11 @@
       Last Name is <strong>required</strong>
     </mat-error>
   </mat-form-field>
+
   <!-- Percentage of Benefit -->
   <mat-form-field class="example-full-width">
     <mat-label>Percentage of Benefit</mat-label>
-    <input matInput placeholder="Last Name" required formControlName="percentOfBenefit">
+    <input matInput maxlength="3" placeholder="Percentage" required formControlName="percentOfBenefit">
     <mat-error *ngIf="formControl.hasError('required')">
       A Percentage is <strong>required</strong>
     </mat-error>

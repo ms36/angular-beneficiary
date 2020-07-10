@@ -1,4 +1,6 @@
 <app-beneficiary-header [user]="user"></app-beneficiary-header>
+
+<!-- Primary Benificiary -->
 <div class="body">
   <p>
     <strong class="title">Primary Benificiary</strong>
@@ -7,22 +9,29 @@
     </a>
   </p>
   <div *ngFor="let beneficiary of this.user.primaryBeneficiaries; let i = index">
-    <app-beneficiary [beneficiary]="beneficiary" (deleteBeneficiary)="deleteBeneficiary($event)"></app-beneficiary>
+    <app-beneficiary
+      [beneficiary]="beneficiary"
+      (deleteBeneficiary)="deleteBeneficiary($event)"
+      (percentageChanged)="adjustBeneficiaryPercent($event)">
+    </app-beneficiary>
     <mat-divider class="divider"></mat-divider>
   </div>
-  <button
-    *ngIf="!this.showBeneficiaryDetailForm"
-    mat-mini-fab class="btn-add"
-    (click)="toggleshowBeneficiaryDetailForm()"
-    cdkOverlayOrigin #originOverlay="cdkOverlayOrigin">+
-  </button>
+  <div class="btn-container">
+    <button
+      *ngIf="!this.showBeneficiaryDetailForm"
+      mat-mini-fab class="btn-add"
+      (click)="toggleShowBeneficiaryDetailForm()"
+      cdkOverlayOrigin #originOverlay="cdkOverlayOrigin">+
+    </button>
+  </div>
   <app-beneficiary-details
     *ngIf="this.showBeneficiaryDetailForm"
     (addNewBeneficiary)="addBeneficiary($event)"
-    (closeScreen)="closeAddBeneficiary()">
+    (closeScreen)="closeBeneficiaryDetailForm()">
   </app-beneficiary-details>
 
-  <div *ngIf="this.user.primaryBeneficiaries">
+  <!-- Contingent Benificiary -->
+  <div *ngIf="this.user.primaryBeneficiaries.length > 0">
     <p>
       <strong class="title">Contingent Benificiary</strong>
       <a href="https://benefits.va.gov/INSURANCE/resources_handbook_ins_chapter6.asp" target="_blank">
@@ -33,7 +42,9 @@
       <app-beneficiary></app-beneficiary>
       <mat-divider class="divider"></mat-divider>
     </div>
-    <button mat-mini-fab color="primary" class="btn-add">+</button>
+    <div class="btn-container">
+      <button mat-mini-fab color="primary" class="btn-add">+</button>
+    </div>
   </div>
 </div>
 
