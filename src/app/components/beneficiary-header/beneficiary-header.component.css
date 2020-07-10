@@ -17,7 +17,6 @@ img {
 
 .tool-bar {
   background-color: #112e51;
-  padding: 50px;
   border-bottom: 2px white;
 }
 
@@ -25,7 +24,7 @@ img {
   color: white;
   background-color: #112e51;
   font-size: 1.2rem;
-  padding: 20px 0px 20px 50px;
+  padding: 20px 0px 0px 50px;
   margin: 0;
 }
 
