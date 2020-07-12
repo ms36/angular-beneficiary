@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color-1: #112e51;
+  --primary-color-2: #0073b4;
+  --primary-color-3: #0071bb;
+  --secondary-color-1: #fac922;
+  --secondary-color-2: white;
+  --secondary-color-3: black;
+}
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #0073b4;}
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; background-color: var(--primary-color-2);}

@@ -1,22 +1,24 @@
 <div class="header-container">
-<div class="header">
-  <app-beneficiary-header [user]="user"></app-beneficiary-header>
-</div>
+  <div class="header">
+    <app-beneficiary-header [user]="user"></app-beneficiary-header>
+  </div>
 </div>
 
 <!-- Primary Benificiary -->
 <div class="body">
-  <p>
-    <strong class="title">Primary Benificiary</strong>
-    <a href="https://benefits.va.gov/INSURANCE/resources_handbook_ins_chapter6.asp" target="_blank">
-      <mat-icon>info</mat-icon>
-    </a>
-  </p>
-  <div *ngFor="let beneficiary of this.user.primaryBeneficiaries; let i = index">
+  <div class="title-container">
+    <h1 class="title">Beneficiaries</h1>
+  </div>
+  <h2 class="sub-title">Primary
+    {{this.user.beneficiaryTypes[this.beneficiaryType.primary].length < 2
+      ? ' Benificiary'
+      : ' Benificiaries'}}
+  </h2>
+  <div *ngFor="let beneficiary of this.user.beneficiaryTypes[this.beneficiaryType.primary]; let i = index">
     <app-beneficiary
       [beneficiary]="beneficiary"
-      (deleteBeneficiary)="deleteBeneficiary($event)"
-      (percentageChanged)="adjustBeneficiaryPercent($event)">
+      (deleteBeneficiary)="deleteBeneficiary(this.beneficiaryType.primary, $event)"
+      (percentageChanged)="percentageChanged(this.beneficiaryType.primary, $event)">
     </app-beneficiary>
     <mat-divider class="divider"></mat-divider>
   </div>
@@ -28,27 +30,26 @@
       cdkOverlayOrigin #originOverlay="cdkOverlayOrigin">+
     </button>
   </div>
+  <!-- Beneficiary details, **DELETE THIS WHEN THE OVERLAY IS CREATED** -->
   <app-beneficiary-details
     *ngIf="this.showBeneficiaryDetailForm"
-    (addNewBeneficiary)="addBeneficiary($event)"
+    (addNewBeneficiary)="addBeneficiary(this.beneficiaryType.primary, $event)"
     (closeScreen)="closeBeneficiaryDetailForm()">
   </app-beneficiary-details>
 
   <!-- Contingent Benificiary -->
-  <div *ngIf="this.user.primaryBeneficiaries.length > 0">
-    <p>
-      <strong class="title">Contingent Benificiary</strong>
-      <a href="https://benefits.va.gov/INSURANCE/resources_handbook_ins_chapter6.asp" target="_blank">
-        <mat-icon>info</mat-icon>
-      </a>
-    </p>
-    <div *ngFor="let beneficiary of this.user.contingentBeneficiaries">
+  <div *ngIf="this.user.beneficiaryTypes[this.beneficiaryType.primary].length > 0">
+    <h2 class="sub-title">Contingent Benificiary</h2>
+    <div *ngFor="let beneficiary of this.user.beneficiaryTypes[this.beneficiaryType.contingent]">
       <app-beneficiary></app-beneficiary>
       <mat-divider class="divider"></mat-divider>
     </div>
     <div class="btn-container">
       <button mat-mini-fab color="primary" class="btn-add">+</button>
     </div>
+  </div>
+  <div class="btn-container">
+    <button type="button" color="primary" *ngIf="showSaveButton" mat-raised-button (click)="saveBeneficiary()">Save</button>
   </div>
 </div>
 

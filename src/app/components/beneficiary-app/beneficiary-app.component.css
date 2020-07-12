@@ -1,18 +1,51 @@
+.header-container {
+  width: 100%;
+  min-height: 159px;
+  background-color: var(--primary-color-1);
+}
+
+.header {
+  margin: 0 auto;
+  padding-top: 2rem;
+  max-width: 959px;
+  background-color: var(--primary-color-1);
+}
+
+.title-container {
+  height: 72px;
+  padding: 10px 20px 10px 20px;
+  background-image: linear-gradient(rgb(200, 200, 200), white);
+}
+
 .title {
-  font-size: 1.5rem;
+  font-family: Georgia,"Times New Roman",Times,serif;
+  font-weight: 400;
+  color: #003f72;
+  padding-bottom: 6px;
+}
+
+.sub-title {
+  font-family: Georgia,"Times New Roman",Times,serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  color: #003f72;
+  margin: 10px 20px 10px 20px;
+  padding-top: 20px;
 }
 
 a:link:active, a:visited:active, a:link, a:visited {
-  color: black;
+  color: var(--secondary-color-3);
   padding: 10px;
 }
 
 .body {
   margin: 0 auto;
-  max-width: 60%;
-  padding: 20px;
-  box-shadow: -10px 0px 40px 0px #112e51, 10px 0px 40px 0px #112e51;
-  background-color: white;
+  max-width: 959px;
+  /* padding: 20px; */
+  box-shadow: -10px 0px 40px 0px var(--primary-color-1),
+               10px 0px 40px 0px var(--primary-color-1);
+  background-color: var(--secondary-color-2);
+  background-image: linear-gradient(rgb(160, 160, 160) 1%, white 25%);
 }
 
 .btn-add {
@@ -29,13 +62,3 @@ a:link:active, a:visited:active, a:link, a:visited {
   width: 100%;
 }
 
-.header-container {
-  width: 100%;
-  background-color: #112e51;
-}
-.header {
-  margin: 0 auto;
-  max-width: 60%;
-  padding: 20px;
-  background-color: #112e51;
-}

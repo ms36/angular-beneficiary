@@ -1,34 +1,30 @@
-.example-spacer {
-  flex: 1 1 auto;
-}
-
-.title {
-  font-size: 2rem;
+.container {
+  display: flex;
+  justify-content: space-between;
 }
 
 img {
   width: 260px;
+  padding-bottom: 5px;
 }
 
-.container {
-  margin: 0;
-  padding: 0;
-}
-
-.tool-bar {
-  background-color: #112e51;
-  border-bottom: 2px white;
-}
-
-.title {
-  color: white;
-  background-color: #112e51;
-  font-size: 1.2rem;
-  padding: 20px 0px 0px 50px;
-  margin: 0;
+.user-name {
+  color: var(--secondary-color-2);
+  font-weight: 600;
 }
 
 .divider {
-  background-color: white;
-  display: block;
+  height: 1.5px;
+  width: 100%;
+  background-color: var(--secondary-color-2);
+}
+
+.title {
+  color: var(--secondary-color-2);
+  background-color: var(--primary-color-1);
+  font-size: 1.0rem;
+  font-weight: 600;
+  font-family: Source Sans Pro,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+  padding: 20px 0px 0px 15px;
+  margin: 0;
 }
