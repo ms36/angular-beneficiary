@@ -1,31 +1,21 @@
 <form [formGroup]="addbeneficiaryForm">
-  <!-- First Name -->
-  <mat-form-field class="example-full-width">
-    <mat-label>First Name</mat-label>
-    <input matInput placeholder="First Name" required formControlName="firstName" autofocus>
-    <mat-error *ngIf="formControl.hasError('required')">
-      First Name is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
-
-  <!-- Last Name -->
-  <mat-form-field class="example-full-width">
-    <mat-label>Last Name</mat-label>
-    <input matInput placeholder="Last Name" required formControlName="lastName">
-    <mat-error *ngIf="formControl.hasError('required')">
-      Last Name is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
-
-  <!-- Percentage of Benefit -->
-  <mat-form-field class="example-full-width">
-    <mat-label>Percentage of Benefit</mat-label>
-    <input matInput maxlength="3" placeholder="Percentage" required formControlName="percentOfBenefit">
-    <mat-error *ngIf="formControl.hasError('required')">
-      A Percentage is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
-
-  <button type="button" mat-raised-button color="primary" (click)="addBeneficiary()">Save</button>
-  <button type="button" mat-raised-button color="warn" (click)="closeAddBeneficiary()">Cancel</button>
+  <div class="container">
+    <div class="column">
+      <!-- First Name -->
+      <label class="label">First Name</label>
+      <input required formControlName="firstName" autofocus>
+    </div>
+      <div class="column">
+      <!-- Last Name -->
+      <label class="label">Last Name</label>
+      <input required formControlName="lastName">
+    </div>
+    <div class="column">
+      <!-- Percentage of Benefit -->
+      <label class="label">Percentage</label>
+      <input maxlength="3" required formControlName="percentOfBenefit">
+    </div>
+    <button type="button" (click)="addBeneficiary()">Save</button>
+    <button type="button" (click)="closeAddBeneficiary()">Cancel</button>
+  </div>
 </form>

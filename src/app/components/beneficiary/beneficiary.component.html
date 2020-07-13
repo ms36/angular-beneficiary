@@ -3,19 +3,19 @@
     <span class="name">{{beneficiary?.firstName}} {{beneficiary?.lastName}}</span>
 
     <div class="percentage">
-      <mat-form-field class="example-full-width">
-        <mat-label>Percentage</mat-label>
-        <input matInput
+        <label class="label">Percentage</label>
+        <input
+          class="input-percentage"
+          type="number"
           #percentage
           maxlength="3"
           placeholder="Ex. 50"
           value="{{beneficiary?.percentOfBenefit}}"
           (input)="onChange(beneficiary, percentage)"
         >
-        <mat-hint align="end">{{beneficiary?.percentOfBenefit}} / 100</mat-hint>
-      </mat-form-field>
+        <label class="label">{{beneficiary?.percentOfBenefit}} / 100</label>
     </div>
 
-    <button mat-mini-fab class="btn-subtract" (click)="onDelete(beneficiary)">-</button>
+    <button class="btn-subtract" (click)="onDelete(beneficiary)">Delete</button>
 </div>
 

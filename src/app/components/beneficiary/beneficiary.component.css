@@ -3,14 +3,43 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #f1f1f1;
 }
 
 .name {
   font-size: 1.3rem;
 }
 
+.percentage {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color:#323a45;
+}
+
+.input-percentage {
+  margin: 3px 0px;
+  font-weight: bold;
+  font-family: Source Sans Pro,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+  padding: 10px;
+  border: .1rem solid #5b616b;
+}
+
 .btn-subtract {
   margin: 20px;
-  font-size: 2rem;
-  background-color: red;
+  height: 42px;
+  padding: 0px 10px;
+  border: 0px solid;
+  border-radius: 5px;
+  background-color: var(--primary-color-2);
+  color: var(--secondary-color-2);
+  font-size: 1.0rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-subtract:hover {
+  background-color: var(--primary-color-1);
 }

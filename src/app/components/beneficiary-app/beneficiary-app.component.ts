@@ -13,6 +13,8 @@ export class BeneficiaryAppComponent implements OnInit {
   beneficiaryType = BeneficiaryType;
   showBeneficiaryDetailForm = false;
   showSaveButton = false;
+  // ***Testing ***/
+  showBeneficiaryDetailFormContingent = false;
 
   constructor() { }
 
@@ -53,6 +55,11 @@ export class BeneficiaryAppComponent implements OnInit {
     this.showBeneficiaryDetailForm = !this.showBeneficiaryDetailForm;
   }
 
+  // ***Testing ***/
+  toggleShowBeneficiaryDetailFormContingent() {
+    this.showBeneficiaryDetailFormContingent = !this.showBeneficiaryDetailFormContingent;
+  }
+
   deleteBeneficiary(type, beneficiary: Beneficiary) {
     this.user.beneficiaryTypes[type] = this.user.beneficiaryTypes[type].filter(b => b.id !== beneficiary.id);
 
@@ -86,6 +93,7 @@ export class BeneficiaryAppComponent implements OnInit {
 
   closeBeneficiaryDetailForm() {
     this.showBeneficiaryDetailForm = false;
+    this.showBeneficiaryDetailFormContingent = false;
   }
 
   percentageChanged(type, beneficiary?: Beneficiary) {

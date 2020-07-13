@@ -25,13 +25,17 @@
   <div class="btn-container">
     <button
       *ngIf="!this.showBeneficiaryDetailForm"
-      mat-mini-fab class="btn-add"
+      class="btn-add"
       (click)="toggleShowBeneficiaryDetailForm()"
-      cdkOverlayOrigin #originOverlay="cdkOverlayOrigin">+
+      cdkOverlayOrigin #originOverlay="cdkOverlayOrigin">Add
     </button>
   </div>
   <!-- Beneficiary details, **DELETE THIS WHEN THE OVERLAY IS CREATED** -->
-
+  <app-beneficiary-details
+    *ngIf="this.showBeneficiaryDetailForm"
+    (addNewBeneficiary)="addBeneficiary(this.beneficiaryType.primary, $event)"
+    (closeScreen)="closeBeneficiaryDetailForm()">
+  </app-beneficiary-details>
 
   <!-- Contingent Benificiary -->
   <div *ngIf="this.user.beneficiaryTypes[this.beneficiaryType.primary].length > 0">
@@ -51,20 +55,20 @@
     <div class="btn-container">
       <button
         *ngIf="!this.showBeneficiaryDetailForm"
-        mat-mini-fab class="btn-add"
-        (click)="toggleShowBeneficiaryDetailForm()"
-        cdkOverlayOrigin #originOverlay="cdkOverlayOrigin">+
+        class="btn-add"
+        (click)="toggleShowBeneficiaryDetailFormContingent()"
+        cdkOverlayOrigin #originOverlay="cdkOverlayOrigin">Add
       </button>
     </div>
     <!-- Beneficiary details, **DELETE THIS WHEN THE OVERLAY IS CREATED** -->
     <app-beneficiary-details
-    *ngIf="this.showBeneficiaryDetailForm"
-    (addNewBeneficiary)="addBeneficiary(this.beneficiaryType.contingent, $event)"
-    (closeScreen)="closeBeneficiaryDetailForm()">
-  </app-beneficiary-details>
+      *ngIf="this.showBeneficiaryDetailFormContingent"
+      (addNewBeneficiary)="addBeneficiary(this.beneficiaryType.contingent, $event)"
+      (closeScreen)="closeBeneficiaryDetailForm()">
+    </app-beneficiary-details>
   </div>
   <div class="btn-container">
-    <button type="button" color="primary" *ngIf="showSaveButton" mat-raised-button (click)="saveBeneficiary()">Save</button>
+    <button class="btn-save" *ngIf="showSaveButton" (click)="saveBeneficiary()">Save</button>
   </div>
 </div>
 
