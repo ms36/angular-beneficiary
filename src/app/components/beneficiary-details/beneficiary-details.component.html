@@ -2,7 +2,7 @@
   <!-- First Name -->
   <mat-form-field class="example-full-width">
     <mat-label>First Name</mat-label>
-    <input matInput placeholder="First Name" required formControlName="firstName">
+    <input matInput placeholder="First Name" required formControlName="firstName" autofocus>
     <mat-error *ngIf="formControl.hasError('required')">
       First Name is <strong>required</strong>
     </mat-error>

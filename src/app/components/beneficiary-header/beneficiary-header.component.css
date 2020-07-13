@@ -5,7 +5,7 @@
 
 img {
   width: 260px;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
 }
 
 .user-name {
@@ -19,12 +19,60 @@ img {
   background-color: var(--secondary-color-2);
 }
 
-.title {
+.nav {
+  display: flex;
+  align-content: center;
+  margin: 0;
+  list-style: none;
+  height: 51px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
   color: var(--secondary-color-2);
-  background-color: var(--primary-color-1);
+  background-color: transparent;
   font-size: 1.0rem;
   font-weight: 600;
   font-family: Source Sans Pro,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
-  padding: 20px 0px 0px 15px;
-  margin: 0;
+  padding: 16px 32px 16px 16px;
+}
+
+.icon-expand-more {
+  position: absolute;
+  font-size: 1.3rem;
+  color: var(--secondary-color-2);
+  top: 16px;
+  right: 8px;
+  pointer-events: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  position: relative;
+}
+
+li:hover {
+  background-color: var(--primary-color-3);
+}
+
+.a-find-a-location {
+  position: absolute;
+  background-color: transparent;
+  width: 160px;
+  text-decoration: none;
+  padding: 16px;
+  font-size: 1.0rem;
+  font-weight: 600;
+}
+
+.a-find-a-location:hover {
+  background-color: var(--primary-color-3);
+}
+
+a:link:active, a:visited:active, a:link, a:visited {
+  color: var(--secondary-color-2);
 }

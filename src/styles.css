@@ -6,7 +6,12 @@
   --secondary-color-1: #fac922;
   --secondary-color-2: white;
   --secondary-color-3: black;
+  --outline-color: #f9c642;
 }
 
+*:focus {
+  outline: 2px solid var(--outline-color);
+  outline-offset: 2px;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Arial, Helvetica, sans-serif; background-color: var(--primary-color-2);}
